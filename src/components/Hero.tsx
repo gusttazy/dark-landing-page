@@ -10,7 +10,7 @@ export const Hero = () => {
             href="#"
             className="inline-flex gap-3 border py-1 px-2 rounded-lg border-white/30"
           >
-            <span className="text-transparent bg-clip-text bg-[linear-gradient(to_right,#53DBF2,#72CCF1,#91BDEF,#AFADEE,#CE9EEC)] [-webkit-background-clip:text]">
+            <span className="text-white/80">
               A versão 2.0 já está disponível
             </span>
             <span className="inline-flex items-center gap-1">
