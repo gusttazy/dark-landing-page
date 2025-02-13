@@ -7,7 +7,11 @@ export const Navbar = () => {
     <div className="bg-black">
       <div className="px-4">
         <div className="py-4 flex items-center justify-between">
-          <Image src={logoImage} alt="Logo" className="h-12 w-12 hover:scale-105 transition cursor-pointer" />
+          <Image
+            src={logoImage}
+            alt="Logo"
+            className="h-12 w-12 hover:scale-105 transition cursor-pointer active:scale-95 duration-300 ease-in-out"
+          />
           <div className="border border-white border-opacity-20 h-10 w-10 inline-flex justify-center items-center rounded-lg sm:hidden">
             <MenuIcon className="h-6 w-6" />
           </div>
@@ -44,7 +48,7 @@ export const Navbar = () => {
                 Clientes
               </a>
             </nav>
-            <button className="bg-white py-2 px-4 rounded-lg font-bold hover:scale-[0.98] transition">
+            <button className="bg-white py-2 px-4 rounded-lg font-bold transition-all duration-300 ease-in-out active:scale-95">
               Adquira já!
             </button>
           </div>

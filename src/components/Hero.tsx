@@ -5,7 +5,7 @@ export const Hero = () => {
     <div className="bg-black text-white bg-[linear-gradient(to_bottom,#000,#091e3a,#1c2669,#2845c8,#003dcc)] py-[72px] sm:py-24 relative overflow-clip">
       <div className="absolute h-[375px] w-[750px] sm:w-[1536px] sm:h-[768px] lg:w-[2800px] lg:h-[1200px] rounded-[100%] bg-black left-1/2 -translate-x-1/2 border-[6px] border-[#1c2669] bg-[radial-gradient(closest-side,#000)] top-[calc(100%-96px)] sm:top-[calc(100%-120px)] filter blur-[20px]"></div>
       <div className="container relative">
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center cursor-pointer active:scale-95 transition-all duration-300 ease-in-out">
           <a
             href="#"
             className="inline-flex gap-3 border py-1 px-2 rounded-lg border-white/30"
@@ -31,7 +31,7 @@ export const Hero = () => {
           </p>
         </div>
         <div className="flex items-center justify-center mt-8">
-          <button className="bg-white text-black py-3 px-5 rounded-lg font-bold">
+          <button className="bg-white text-black py-3 px-5 rounded-lg font-bold active:scale-95 transition-all duration-300 ease-in-out">
             Comece agora
           </button>
         </div>
