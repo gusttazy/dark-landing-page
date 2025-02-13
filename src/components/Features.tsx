@@ -1,5 +1,5 @@
 import EcoIcon from "../assets/icons/plug.svg";
-import DefIcon from "../assets/icons/bullseye.svg";
+import DefIcon from "../assets/icons/check.svg";
 import CryptoIcon from "../assets/icons/lock.svg";
 
 const features = [
@@ -43,7 +43,7 @@ export const Features = () => {
               className="border border-white/30 px-5 py-10 text-center rounded-xl sm:flex-1"
             >
               <div className="inline-flex h-14 w-14 bg-white justify-center items-center rounded-lg">
-                <Icon className="h-9 w-9" />
+                <Icon className="h-10 w-10" />
               </div>
               <h3 className="mt-6 font-bold text-lg">{title}</h3>
               <p className="mt-2 text-white/70">{description}</p>
