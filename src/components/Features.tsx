@@ -1,5 +1,5 @@
 import EcoIcon from "../assets/icons/plug.svg";
-import DefIcon from "../assets/icons/check.svg";
+import DefIcon from "../assets/icons/check-square.svg";
 import CryptoIcon from "../assets/icons/lock.svg";
 
 const features = [
