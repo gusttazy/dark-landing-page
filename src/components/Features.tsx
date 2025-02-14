@@ -1,3 +1,7 @@
+"use client";
+
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
 import EcoIcon from "../assets/icons/plug.svg";
 import DefIcon from "../assets/icons/check-square.svg";
 import CryptoIcon from "../assets/icons/lock.svg";
@@ -24,22 +28,65 @@ const features = [
 ];
 
 export const Features = () => {
+  const controls = useAnimation();
+  const ref = useRef(null);
+  // Usando o ref no container que engloba tanto o título quanto as cards
+  const isInView = useInView(ref, { once: false });
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [isInView, controls]);
+
+  // Variantes para o título e descrição
+  const titleVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
+  // Variantes para os cards de features
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <div className="bg-black text-white py-[72px] sm:py-24">
-      <div className="container">
-        <h2 className="text-center font-bold text-5xl sm:text-6xl tracking-tighter">
+      <div className="container" ref={ref}>
+        {/* Título animado */}
+        <motion.h2
+          variants={titleVariants}
+          initial="hidden"
+          animate={controls}
+          className="text-center font-bold text-5xl sm:text-6xl tracking-tighter"
+        >
           Temos tudo que você precisa
-        </h2>
+        </motion.h2>
+
         <div className="max-w-xl mx-auto">
-          <p className="text-center mt-5 text-xl text-white/70">
+          {/* Descrição animada */}
+          <motion.p
+            variants={titleVariants}
+            initial="hidden"
+            animate={controls}
+            className="text-center mt-5 text-xl text-white/70"
+          >
             Acesse listas personalizáveis, ferramentas de colaboração e
             monitoramento inteligente em um único lugar.
-          </p>
+          </motion.p>
         </div>
+
         <div className="mt-16 flex flex-col gap-4 sm:flex-row">
           {features.map(({ title, description, icon: Icon }, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={cardVariants}
+              initial="hidden"
+              animate={controls}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
               className="border border-white/30 px-5 py-10 text-center rounded-xl sm:flex-1"
             >
               <div className="inline-flex h-14 w-14 bg-white justify-center items-center rounded-lg">
@@ -47,7 +94,7 @@ export const Features = () => {
               </div>
               <h3 className="mt-6 font-bold text-lg">{title}</h3>
               <p className="mt-2 text-white/70">{description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
